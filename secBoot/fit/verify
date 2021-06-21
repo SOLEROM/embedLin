@@ -1,0 +1,21 @@
+
+
+host side
+* mkimage -l image.fit
+
+
+
+on target
+* iminfo command on u-boot 
+* 
+
+```
+U-Boot comes with a tool fit_check_sign. You can check the integrity of your RSA signed FIT image like this:
+
+tools/fit_check_sign -f image.fit -k test.dtb
+
+You have to provide the signed fit image and a binary device tree containing the public key.
+
+```
+
+

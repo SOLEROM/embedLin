@@ -26,6 +26,11 @@ net.ifnames=0
 config.txt  // append in end of file:
 =====================================
 dtoverlay=dwc2
+
+cmdline.txt add:
+=================
+modules-load=dwc2,g_ether
+
 ```
 
 * set display size
@@ -44,6 +49,9 @@ framebuffer_height=1080
 * local ip
 
 ```
+apt-get install ifupdown
+
+
 /etc/network/interfaces.d/eth0
 auto eth0
 allow-hotplug eth0
@@ -59,6 +67,9 @@ iface usb0 inet static
     address 10.0.0.11
     netmask 255.255.255.0
     gateway 10.0.0.1
+
+
+sudo systemctl enable networking
 
 ```
 
